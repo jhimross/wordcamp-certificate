@@ -150,7 +150,7 @@ wordcamp-certificate/
 
 ---
 
-## 🗄️ Database
+## Database
 
 On activation the plugin creates one custom table:
 
