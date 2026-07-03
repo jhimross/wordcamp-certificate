@@ -181,7 +181,7 @@ The table is created with `dbDelta()` so it is safe to re-activate without data 
 
 ---
 
-## 🎨 Customization
+## Customization
 
 ### Colors
 
