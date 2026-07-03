@@ -95,7 +95,7 @@ After activation, configure the plugin under **WP Admin → WC Certificates → 
 
 ---
 
-## 🖊️ Usage
+## Usage
 
 ### Shortcode
 
@@ -130,7 +130,7 @@ This URL can be bookmarked, shared, or re-printed at any time.
 
 ---
 
-## 🗂️ File Structure
+## File Structure
 
 ```
 wordcamp-certificate/
@@ -171,7 +171,7 @@ The table is created with `dbDelta()` so it is safe to re-activate without data 
 
 ---
 
-## 🔒 Security
+## Security
 
 - All AJAX requests are verified with `wp_create_nonce` / `check_ajax_referer`
 - User input is sanitized with `sanitize_text_field` and `sanitize_email` before processing or storage
@@ -210,7 +210,7 @@ The WordPress "W" SVG logo in `templates/certificate.php` can be swapped for you
 
 ---
 
-## 🪝 Hooks & Filters
+## Hooks & Filters
 
 The plugin is built to be extendable. Future versions will expose the following hooks (contributions welcome):
 
@@ -223,7 +223,7 @@ The plugin is built to be extendable. Future versions will expose the following 
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions, issues, and feature requests are welcome!
 
@@ -244,7 +244,7 @@ Contributions, issues, and feature requests are welcome!
 
 ---
 
-## 📄 License
+## License
 
 This plugin is licensed under the **GNU General Public License v2.0 or later**.
 
@@ -259,7 +259,7 @@ See [LICENSE](https://www.gnu.org/licenses/gpl-2.0.html) for the full license te
 
 ---
 
-## 👏 Credits
+## Credits
 
 - Built with [WordPress](https://wordpress.org) and ❤️ for the WordCamp community
 - Certificate typography: [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) & [Inter](https://fonts.google.com/specimen/Inter) via Google Fonts
@@ -267,6 +267,6 @@ See [LICENSE](https://www.gnu.org/licenses/gpl-2.0.html) for the full license te
 
 ---
 
-## 📬 Support
+## Support
 
 Found a bug or have a question? [Open an issue](https://github.com/YOUR_USERNAME/wordcamp-certificate/issues) on GitHub.
