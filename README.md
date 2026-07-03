@@ -9,15 +9,27 @@
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
-| Attendee Form | Certificate Output |
-|---|---|
-| Attendees enter their name and email | A print-ready certificate with their name |
+### 1. Attendee Enters Their Registration Information
+<img width="1913" height="914" alt="Screenshot 2026-07-03 at 11 40 02 PM" src="https://github.com/user-attachments/assets/6b0fe54f-eddc-4101-945b-6f7cbbc3b890" />
+
+### 2. Attendee Views Their Certificate
+<img width="1923" height="912" alt="Screenshot 2026-07-03 at 11 40 20 PM" src="https://github.com/user-attachments/assets/e65c8ef6-894e-4b2e-9d75-edd7eea20fcf" />
+
+### 3. Attendee Prints Their Certificate
+<img width="1920" height="915" alt="Screenshot 2026-07-03 at 11 40 42 PM" src="https://github.com/user-attachments/assets/e5bd659e-0397-4c28-a538-1fedd70185c8" />
+
+### 4. Configuration
+<img width="1917" height="918" alt="Screenshot 2026-07-03 at 11 39 31 PM" src="https://github.com/user-attachments/assets/3cd33d45-f82c-4c3a-958c-46fec8e479e4" />
+
+### 5. Issued Certificates List
+<img width="1240" height="709" alt="Screenshot 2026-07-03 at 11 39 46 PM" src="https://github.com/user-attachments/assets/f49d2d4d-cfcb-490f-b156-db21870abfe4" />
+
 
 ---
 
-## ✨ Features
+## Features
 
 - **Instant certificate generation** — attendees fill in their name and email, click submit, and get their certificate immediately
 - **Beautiful certificate design** — Playfair Display typography, gold corner ornaments, event seal, and signature lines
@@ -32,7 +44,7 @@
 
 ---
 
-## 📋 Requirements
+## Requirements
 
 | Requirement | Minimum Version |
 |---|---|
@@ -44,7 +56,7 @@
 
 ---
 
-## 🚀 Installation
+## Installation
 
 ### Option A — Manual Upload
 
@@ -70,7 +82,7 @@ wp plugin activate wordcamp-certificate
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 After activation, configure the plugin under **WP Admin → WC Certificates → Settings**:
 
