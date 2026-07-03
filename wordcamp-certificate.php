@@ -1,10 +1,10 @@
 <?php
 /**
  * Plugin Name: WordCamp Certificate Generator
- * Plugin URI:  https://wordcamp.org
+ * Plugin URI:  https://jhimross.com
  * Description: Generates a beautiful Certificate of Attendance for WordCamp attendees. Attendees enter their name and email to receive a downloadable certificate.
  * Version:     1.0.0
- * Author:      WordPress Studio
+ * Author:      Jhimross
  * License:     GPL-2.0-or-later
  * Text Domain: wordcamp-certificate
  */
