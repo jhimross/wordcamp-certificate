@@ -1,0 +1,64 @@
+# ============================================================
+# WordCamp Certificate Generator — .gitignore
+# ============================================================
+
+# --- WordPress ---
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+wp-content/backup-db/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+*.log
+
+# --- Dependencies ---
+/vendor/
+/node_modules/
+composer.lock
+package-lock.json
+yarn.lock
+
+# --- Build output ---
+/build/
+/dist/
+*.min.js
+*.min.css
+
+# --- OS files ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --- Editor & IDE ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# --- Environment & secrets ---
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# --- PHP ---
+*.cache
+*.tmp
+
+# --- Test coverage ---
+/coverage/
+.phpunit.result.cache
+phpunit.xml
+
+# --- Composer ---
+/vendor/
+composer.phar
