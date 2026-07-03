@@ -233,7 +233,7 @@ Contributions, issues, and feature requests are welcome!
 - [ ] Custom logo upload field in Settings
 - [ ] Multi-event support (one plugin installation, multiple WordCamp events)
 - [ ] QR code on the certificate linking back to the verification URL
-- [ ] WooCommerce integration — gate certificate generation behind a ticket purchase
+- [ ] CampTix integration — gate certificate generation behind a ticket purchase
 
 ---
 
