@@ -1,6 +1,6 @@
 # WordCamp Certificate Generator
 
-> A WordPress plugin that auto-generates a Certificate of Attendance for WordCamp attendees. Attendees simply enter their full name and email address to instantly receive a beautifully designed, printable certificate.
+> A WordPress plugin that automatically generates a Certificate of Attendance for WordCamp attendees. Attendees simply enter their full name and the email address they used to purchase their WordCamp ticket to instantly receive a beautifully designed, printable certificate.
 
 ![WordPress](https://img.shields.io/badge/WordPress-5.8%2B-21759b?style=flat-square&logo=wordpress)
 ![PHP](https://img.shields.io/badge/PHP-7.4%2B-777bb4?style=flat-square&logo=php)
