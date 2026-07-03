@@ -65,14 +65,7 @@
 3. In WP Admin, go to **Plugins → Installed Plugins**.
 4. Find **WordCamp Certificate Generator** and click **Activate**.
 
-### Option B — Via WP-CLI
-
-```bash
-# From your WordPress root
-wp plugin install /path/to/wordcamp-certificate --activate
-```
-
-### Option C — Clone directly into plugins folder
+### Option B — Clone directly into plugins folder
 
 ```bash
 cd wp-content/plugins
