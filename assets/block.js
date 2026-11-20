@@ -3,6 +3,8 @@
   var el          = element.createElement;
   var useBlockProps = blockEditor.useBlockProps;
   var TextControl = components.TextControl;
+  var SelectControl = components.SelectControl;
+  var EVENTS = (window.wccBlockData && window.wccBlockData.events) || [];
   var PanelBody   = components.PanelBody;
   var InspectorControls = blockEditor.InspectorControls;
 
@@ -12,6 +14,7 @@
     category: 'widgets',
     description: 'Displays the WordCamp Certificate of Attendance form for attendees.',
     attributes: {
+      event:     { type: 'string', default: '' },
       eventName: { type: 'string', default: '' },
       eventDate: { type: 'string', default: '' },
     },
@@ -24,6 +27,13 @@
         'div', blockProps,
         el(InspectorControls, {},
           el(PanelBody, { title: 'Certificate Settings', initialOpen: true },
+            el(SelectControl, {
+              label:    'Event',
+              value:    attrs.event,
+              options:  [{ label: 'Newest active event', value: '' }].concat(EVENTS),
+              onChange: function (v) { props.setAttributes({ event: v }); },
+              help:     'Which event this form issues certificates for.',
+            }),
             el(TextControl, {
               label:    'Event Name',
               value:    attrs.eventName,
@@ -52,9 +62,9 @@
           el('p', { style: { fontSize: '13px', opacity: .8, margin: 0 } },
             'Attendees will enter their name and email to get their certificate.'
           ),
-          attrs.eventName && el('p', {
-            style: { fontSize: '13px', marginTop: '10px', opacity: .9, margin: '10px 0 0' }
-          }, '📅 ' + attrs.eventName + (attrs.eventDate ? ' · ' + attrs.eventDate : ''))
+          el('p', {
+            style: { fontSize: '13px', opacity: .9, margin: '10px 0 0' }
+          }, '📅 ' + (attrs.eventName || (EVENTS.filter(function (e) { return e.value === attrs.event; })[0] || { label: 'Newest active event' }).label))
         )
       );
     },

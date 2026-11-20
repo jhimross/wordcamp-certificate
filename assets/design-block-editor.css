@@ -1,0 +1,65 @@
+/* Editor-only styles for the "Certificate Design" block canvas. */
+.wcc-design-block-notice {
+  background: #f0f7fb;
+  color: #0a2a40;
+  border: 1px solid #d4e8f3;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+/* Give the certificate canvas a visible editing frame and let the block
+   toolbar / inserter breathe inside the narrow certificate proportions. */
+.wcc-cert-canvas {
+  border: 1px dashed #c9a84c;
+  border-radius: 8px;
+  padding: 12px;
+  background: #f0f7fb;
+}
+.wcc-cert-canvas .cert { min-height: 400px; }
+.wcc-cert-canvas .wcc-cert-body {
+  min-height: 60px;
+}
+
+/* Certificate Field token, editor-only affordance. */
+.wcc-cert-field {
+  border: 1px dashed var(--wc-blue, #21759b);
+  border-radius: 4px;
+  padding: 2px 8px;
+  background: rgba(33, 117, 155, 0.06);
+  cursor: default;
+}
+
+/* ── Sidebar controls (1.3) ─────────────────────────────────────────────── */
+.wcc-panel-help { color: #757575; font-size: 12px; margin: 4px 0 12px; }
+.wcc-preset-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.wcc-preset.components-button {
+  height: auto; flex-direction: column; align-items: stretch; gap: 6px; padding: 6px;
+  border: 1px solid #ddd; border-radius: 6px; background: #fff;
+}
+.wcc-preset.components-button:hover { border-color: var(--wp-admin-theme-color, #3858e9); }
+.wcc-preset__thumb {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  aspect-ratio: 297 / 210; border: 2px solid #21759b; border-radius: 2px; background: #fff;
+}
+.wcc-preset__thumb i { display: block; width: 50%; height: 3px; background: #c9a84c; }
+.wcc-preset__thumb b { display: block; width: 70%; height: 6px; background: #0a2a40; }
+.wcc-preset--modern .wcc-preset__thumb { border: 4px double #21759b; }
+.wcc-preset--modern .wcc-preset__thumb b { background: #21759b; border-radius: 3px; }
+.wcc-preset--minimal .wcc-preset__thumb { border-width: 1px; }
+.wcc-preset--minimal .wcc-preset__thumb i { width: 30%; background: #bbb; }
+.wcc-preset__label { font-size: 12px; text-align: center; }
+.wcc-placeholder-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.wcc-placeholder-chip.components-button { font-family: monospace; font-size: 11px; }
+.wcc-bg-thumb { display: block; width: 100%; max-height: 120px; object-fit: cover; border-radius: 4px; margin-bottom: 8px; }
+.wcc-button-row { display: flex; gap: 8px; align-items: center; }
+.wcc-preview-btn.components-button { width: 100%; justify-content: center; }
+/* Keep the editor-only field label readable whatever font the field uses. */
+.wcc-cert-field .wcc-cert-field-tag {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-style: normal; font-size: 9px; font-weight: 600; letter-spacing: 0.5px; line-height: 1.4;
+}
+.wcc-event-shortcut { padding: 0 16px 16px; }
+.wcc-event-shortcut .components-button { width: 100%; justify-content: center; height: auto; min-height: 36px; white-space: normal; text-align: center; }

@@ -1,35 +1,23 @@
 # WordCamp Certificate Generator
 
-> A WordPress plugin that automatically generates a Certificate of Attendance for WordCamp attendees. Attendees simply enter their full name and the email address they used to purchase their WordCamp ticket to instantly receive a beautifully designed, printable certificate.
+> A WordPress plugin that auto-generates a Certificate of Attendance for WordCamp attendees. Attendees simply enter their full name and email address to instantly receive a beautifully designed, printable certificate.
 
 ![WordPress](https://img.shields.io/badge/WordPress-5.8%2B-21759b?style=flat-square&logo=wordpress)
 ![PHP](https://img.shields.io/badge/PHP-7.4%2B-777bb4?style=flat-square&logo=php)
 ![License](https://img.shields.io/badge/License-GPL--2.0--or--later-green?style=flat-square)
-![Version](https://img.shields.io/badge/Version-1.0.0-blue?style=flat-square)
+![Version](https://img.shields.io/badge/Version-1.4.0-blue?style=flat-square)
 
 ---
 
-## Screenshots
+## 📸 Screenshots
 
-### 1. Attendee Enters Their Registration Information
-<img width="1913" height="914" alt="Screenshot 2026-07-03 at 11 40 02 PM" src="https://github.com/user-attachments/assets/6b0fe54f-eddc-4101-945b-6f7cbbc3b890" />
-
-### 2. Attendee Views Their Certificate
-<img width="1923" height="912" alt="Screenshot 2026-07-03 at 11 40 20 PM" src="https://github.com/user-attachments/assets/e65c8ef6-894e-4b2e-9d75-edd7eea20fcf" />
-
-### 3. Attendee Prints Their Certificate
-<img width="1920" height="915" alt="Screenshot 2026-07-03 at 11 40 42 PM" src="https://github.com/user-attachments/assets/e5bd659e-0397-4c28-a538-1fedd70185c8" />
-
-### 4. Configuration
-<img width="1917" height="918" alt="Screenshot 2026-07-03 at 11 39 31 PM" src="https://github.com/user-attachments/assets/3cd33d45-f82c-4c3a-958c-46fec8e479e4" />
-
-### 5. Issued Certificates List
-<img width="1240" height="709" alt="Screenshot 2026-07-03 at 11 39 46 PM" src="https://github.com/user-attachments/assets/f49d2d4d-cfcb-490f-b156-db21870abfe4" />
-
+| Attendee Form | Certificate Output |
+|---|---|
+| Attendees enter their name and email | A print-ready certificate with their name |
 
 ---
 
-## Features
+## ✨ Features
 
 - **Instant certificate generation** — attendees fill in their name and email, click submit, and get their certificate immediately
 - **Beautiful certificate design** — Playfair Display typography, gold corner ornaments, event seal, and signature lines
@@ -37,14 +25,16 @@
 - **Duplicate prevention** — the same email address always returns the same certificate
 - **Unique certificate ID** — every certificate has a short token-based ID for verification
 - **Admin certificates log** — view all issued certificates with a direct link to each one
-- **Settings panel** — configure event name, date, location, and organizer name from WP Admin
+- **Multiple events** — each event has its own details, certificate design, attendee list, and issued certificates
+- **Unique certificate link per event** — e.g. `https://yoursite.com/certificate/wordcamp-manila-2025/`
+- **Archive & duplicate events** — archive past events (their certificate links keep working) and duplicate one to start the next event with the same design
 - **Shortcode support** — `[wordcamp_certificate]` works on any page or post
 - **Gutenberg block** — drag-and-drop "WordCamp Certificate Form" block with Inspector Controls
 - **Fully sanitized & secure** — nonce-verified AJAX, `sanitize_text_field`, `sanitize_email`, and `wpdb->prepare` throughout
 
 ---
 
-## Requirements
+## 📋 Requirements
 
 | Requirement | Minimum Version |
 |---|---|
@@ -56,7 +46,7 @@
 
 ---
 
-## Installation
+## 🚀 Installation
 
 ### Option A — Manual Upload
 
@@ -65,7 +55,14 @@
 3. In WP Admin, go to **Plugins → Installed Plugins**.
 4. Find **WordCamp Certificate Generator** and click **Activate**.
 
-### Option B — Clone directly into plugins folder
+### Option B — Via WP-CLI
+
+```bash
+# From your WordPress root
+wp plugin install /path/to/wordcamp-certificate --activate
+```
+
+### Option C — Clone directly into plugins folder
 
 ```bash
 cd wp-content/plugins
@@ -75,55 +72,82 @@ wp plugin activate wordcamp-certificate
 
 ---
 
-## Configuration
+## ⚙️ Configuration
 
-After activation, configure the plugin under **WP Admin → WC Certificates → Settings**:
+After activation, go to **WP Admin → WC Certificates → Add New Event**. The event name is the post title, the certificate design is the **Certificate Design** block in the editor, and the rest is set in the **Event Details** panel of the editor sidebar:
 
 | Setting | Description | Example |
 |---|---|---|
-| **Event Name** | The full name of your WordCamp event | `WordCamp Manila 2025` |
 | **Event Date** | Date or date range of the event | `July 12–13, 2025` |
 | **Event Location** | City and country (optional) | `Manila, Philippines` |
 | **Organizer Name** | Appears on the signature line | `WordCamp Manila Team` |
+| **Event Logo** | Replaces the default WordPress badge | square image, 200×200px+ |
+
+Then import the event's CampTix CSV under **WC Certificates → Attendees** (choose the event at the top).
+
+### Designing the certificate
+
+Open an event and select the **Certificate Design** block. In the sidebar:
+
+- **Layout** — start from Classic, Modern, or Minimal, then edit anything
+- **Frame & Paper** — frame style and landscape/portrait orientation
+- **Colors** and **Background Image** — accent colors, paper color, optional artwork
+- **Typography** — heading and body fonts (select a Certificate Field to style it individually)
+- **Placeholders** — type `{full_name}`, `{event_name}`, `{event_date}`, `{event_location}`, `{organizer_name}`, `{cert_id}`, or `{date_issued}` into any text
+- **Preview** — open the printable certificate with sample data
+
+Event date, location, organizer and logo are in the **Event Details** panel (Event tab of the sidebar); certificate fields show them live.
+
+### Managing events
+
+- **Events list** (WC Certificates → Events) shows each event's status, unique certificate link, and attendee/certificate counts.
+- **Archive** moves a finished event under the "Archived" view. Its certificate links keep working. **Restore** brings it back.
+- **Duplicate as New Event** creates a draft copy with the same certificate design, organizer, location, and logo. Rename it, set the new date, import attendees, and publish.
 
 ---
 
-## Usage
+## 🖊️ Usage
+
+### Unique event link
+
+Every published event has its own certificate page. Share it with attendees:
+
+```
+https://yoursite.com/certificate/wordcamp-manila-2025/
+```
 
 ### Shortcode
 
-Add this shortcode to any page or post:
+Embed an event's form on any page or post (slug or ID):
 
 ```
-[wordcamp_certificate]
+[wordcamp_certificate event="wordcamp-manila-2025"]
 ```
 
-You can also override event details inline:
-
-```
-[wordcamp_certificate event_name="WordCamp Manila 2025" event_date="July 12, 2025"]
-```
+Without `event`, the newest active event is used.
 
 ### Gutenberg Block
 
 1. Open the Block Editor on any page or post.
 2. Search for **"WordCamp Certificate Form"** in the block inserter.
 3. Add the block — it renders a live preview in the editor.
-4. Use the **Inspector Controls** (right sidebar) to override the event name and date per-page.
+4. Use the **Inspector Controls** (right sidebar) to pick the event.
 
 ### Direct URL
 
-Once a certificate is generated, it lives at a permanent URL:
+Once a certificate is generated, it lives at a permanent URL under its event:
 
 ```
-https://yoursite.com/?wcc_cert=1&token=UNIQUE_TOKEN
+https://yoursite.com/certificate/wordcamp-manila-2025/?token=UNIQUE_TOKEN
 ```
+
+Links from before 1.3 (`/?wcc_cert=1&token=…`) still work.
 
 This URL can be bookmarked, shared, or re-printed at any time.
 
 ---
 
-## File Structure
+## 🗂️ File Structure
 
 ```
 wordcamp-certificate/
@@ -132,18 +156,25 @@ wordcamp-certificate/
 │   ├── frontend.css           # Attendee form styles
 │   ├── frontend.js            # AJAX form submission, inline validation, success state
 │   ├── admin.css              # WP Admin styles
-│   └── block.js               # Gutenberg block (editor-side React/wp.element)
+│   ├── block.js               # Certificate Form block
+│   ├── design-block.js        # Certificate Design block (layouts, frame, colors, fonts)
+│   ├── field-block.js         # Certificate Field token block
+│   └── event-panel.js         # Event Details panel in the editor sidebar
 ├── templates/
 │   ├── form.php               # Attendee-facing input form
 │   ├── certificate.php        # Standalone certificate page (no WP theme wrapper)
 │   ├── admin.php              # Admin certificates list table
-│   └── settings.php           # Admin settings form
+│   ├── attendees.php          # Per-event attendee import & list
+├── includes/
+│   ├── events.php             # Event post type, archive/duplicate, unique links, migration
+│   ├── attendees.php          # Attendee table, CSV import, verification
+│   └── design-settings.php    # Per-event certificate design storage & rendering
 └── README.md
 ```
 
 ---
 
-## Database
+## 🗄️ Database
 
 On activation the plugin creates one custom table:
 
@@ -164,7 +195,7 @@ The table is created with `dbDelta()` so it is safe to re-activate without data 
 
 ---
 
-## Security
+## 🔒 Security
 
 - All AJAX requests are verified with `wp_create_nonce` / `check_ajax_referer`
 - User input is sanitized with `sanitize_text_field` and `sanitize_email` before processing or storage
@@ -174,7 +205,7 @@ The table is created with `dbDelta()` so it is safe to re-activate without data 
 
 ---
 
-## Customization
+## 🎨 Customization
 
 ### Colors
 
@@ -201,9 +232,27 @@ The certificate uses **Playfair Display** (Google Fonts) for headings and **Inte
 
 The WordPress "W" SVG logo in `templates/certificate.php` can be swapped for your own event logo by replacing the `<svg>` inside `.wc-logo`.
 
+### Certificate Design block & Field typography
+
+The **Certificate Design** block renders the full certificate as a drag-and-drop canvas in the Block Editor. Save the page to push the layout site-wide.
+
+Each **Certificate Field** token (attendee name, event date, etc.) has its own **Typography** panel in the inspector:
+
+| Control | Effect on the certificate |
+|---|---|
+| Font Family | Overrides the field's font; "Inherit global design font" keeps the design block's global heading/body font |
+| Font Size | Sets the size in pixels; leave at `0` to keep the default class-based size |
+| Font Weight | Light (300) through Bold (700); "Inherit" keeps the design's default |
+| Italic | Toggles italic styling |
+| Case | Uppercase, lowercase, or capitalize; "Default" leaves text as-is |
+| Letter Spacing | Adds tracking in pixels |
+| Color | Sets the token's text color |
+
+Untouched controls inherit the current design, so existing certificates keep their default look until a control is changed.
+
 ---
 
-## Hooks & Filters
+## 🪝 Hooks & Filters
 
 The plugin is built to be extendable. Future versions will expose the following hooks (contributions welcome):
 
@@ -216,7 +265,7 @@ The plugin is built to be extendable. Future versions will expose the following 
 
 ---
 
-## Contributing
+## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
@@ -233,11 +282,11 @@ Contributions, issues, and feature requests are welcome!
 - [ ] Custom logo upload field in Settings
 - [ ] Multi-event support (one plugin installation, multiple WordCamp events)
 - [ ] QR code on the certificate linking back to the verification URL
-- [ ] CampTix integration — gate certificate generation behind a ticket purchase
+- [ ] WooCommerce integration — gate certificate generation behind a ticket purchase
 
 ---
 
-## License
+## 📄 License
 
 This plugin is licensed under the **GNU General Public License v2.0 or later**.
 
@@ -252,7 +301,7 @@ See [LICENSE](https://www.gnu.org/licenses/gpl-2.0.html) for the full license te
 
 ---
 
-## Credits
+## 👏 Credits
 
 - Built with [WordPress](https://wordpress.org) and ❤️ for the WordCamp community
 - Certificate typography: [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) & [Inter](https://fonts.google.com/specimen/Inter) via Google Fonts
@@ -260,6 +309,6 @@ See [LICENSE](https://www.gnu.org/licenses/gpl-2.0.html) for the full license te
 
 ---
 
-## Support
+## 📬 Support
 
 Found a bug or have a question? [Open an issue](https://github.com/YOUR_USERNAME/wordcamp-certificate/issues) on GitHub.

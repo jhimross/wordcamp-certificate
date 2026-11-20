@@ -90,6 +90,7 @@
           nonce:     wccData.nonce,
           full_name: $nameInput.val().trim(),
           email:     $emailInput.val().trim(),
+          event_id:  $form.find('input[name="event_id"]').val(),
         },
         success: function (res) {
           setLoading(false);

@@ -1,5 +1,5 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
-<div class="wcc-form-wrap" id="wcc-form-wrap">
+<div class="wcc-form-wrap" id="wcc-form-wrap" data-event-id="<?php echo esc_attr( $atts['event_id'] ); ?>">
   <div class="wcc-form-card">
 
     <!-- Icon + heading -->
@@ -18,6 +18,7 @@
     <!-- Form -->
     <form id="wcc-form" class="wcc-form" novalidate>
       <?php wp_nonce_field( 'wcc_generate_nonce', 'wcc_nonce_field' ); ?>
+      <input type="hidden" name="event_id" value="<?php echo esc_attr( $atts['event_id'] ); ?>" />
 
       <div class="wcc-field">
         <label for="wcc-full-name" class="wcc-label">
